@@ -33,7 +33,27 @@ function App() {
     }
 
     const checkAnswer = (e : React.MouseEvent<HTMLButtonElement>) => {
+		if (!gameOver) {
+			//get value of the button (the answer selected)
+			const answer = e.currentTarget.value;
 
+			//is answer correct, if so increment score
+			const correct = questions[number].correct_answer === answer;
+
+			//take previous score state, and add one to it
+			if (correct) setScore(prev => prev + 1);
+
+			const userAnswer = {
+				question: questions[number].question,
+				answer,
+				correct,
+				correctAnswer: questions[number].correct_answer
+			}
+
+			//take previous user answers, keep everything as it is
+			//and append the newest answer
+			setUserAnswers(prev => [...prev, userAnswer])
+		}
     }
 
     const nextQuestion = () => {
