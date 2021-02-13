@@ -53,4 +53,19 @@ export const AppWrapper = styled.div `
         text-align: center;
         margin: 20px;
     }
+
+    > button.start, button.next {
+        cursor: pointer;    
+        background: linear-gradient(180deg, #fff, #ffcc91);
+        border: 2px solid #d38ff8;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+        height: 40px;
+        margin: 20px 0;
+        padding: 0 40px;
+    }
+
+    > :no-button.next {
+        max-width: 200px
+    }
 `
