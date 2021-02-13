@@ -9,6 +9,16 @@ declare type Props = {
     totalQuestions: number;
 }
 
+// Or
+// interface Props {
+//     question: string;
+//     answers: string[];
+//     callback: any;
+//     userAnswer: any;
+//     questionNo: number;
+//     totalQuestions: number;
+// }
+
 const QuestionCard: React.FC<Props> = ({ 
     question, 
     answers, 

@@ -39,6 +39,7 @@ function App() {
 				question={questions[number].question}
 				answers={questions[number].answers}
 				userAnswer={userAnswers ? userAnswers[number] : undefined}
+				callback={checkAnswer}
 			/>
 			<button className="next" onClick={nextQuestion}>
 				Next Question
