@@ -82,7 +82,7 @@ function App() {
 				)}
 
 				{/* show score only during game */}
-				{!gameOver && <p className="score">Score:</p>}
+				{!gameOver && <p className="score">Score: {score}</p>}
 
 				{/* show loading only when questions are loading */}
 				{loading && <p>Loading Questions...</p>}
