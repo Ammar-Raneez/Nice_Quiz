@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
-import { GlobalStyles } from './App.style';
+import { AppWrapper, GlobalStyles } from './App.style';
 import QuestionCard from './components/QuestionCard/QuestionCard';
 import { Difficulty, QuestionState, UserAnswer } from './types';
 
@@ -70,7 +70,7 @@ function App() {
 	return (
 		<>
 			<GlobalStyles />
-			<div className="app">
+			<AppWrapper>
 				<h1>Nice Quiz</h1>
 
 				{/* show start only at beginning */}
@@ -105,7 +105,7 @@ function App() {
 						Next Question
 					</button>
 				))}
-			</div>
+			</AppWrapper>
 		</>
 	);
 }
