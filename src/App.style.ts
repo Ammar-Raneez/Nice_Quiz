@@ -1,27 +1,4 @@
-import BGImage from './images/bgimage.jpg'
-import styled, { createGlobalStyle } from 'styled-components'
-
-export const GlobalStyles = createGlobalStyle `
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Catamaran', sans-serif;
-    } 
-
-    html {
-        height: 100%;
-    }
-
-    body {
-        background-image: url(${BGImage});
-        background-size: cover;
-        margin: 0;
-        padding: 0 20px;
-        display: flex;
-        justify-content: center;
-    }
-`
+import styled from 'styled-components'
 
 export const AppWrapper = styled.div `
     display: flex;
@@ -65,7 +42,7 @@ export const AppWrapper = styled.div `
         padding: 0 40px;
     }
 
-    > :no-button.next {
+    > button.next {
         max-width: 200px
     }
 `

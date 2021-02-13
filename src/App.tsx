@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
-import { AppWrapper, GlobalStyles } from './App.style';
+import { AppWrapper } from './App.style';
 import QuestionCard from './components/QuestionCard/QuestionCard';
+import { GlobalStyles } from './Global.style';
 import { Difficulty, QuestionState, UserAnswer } from './types';
 
 const TOTAL_QUESTIONS: number = 10;
