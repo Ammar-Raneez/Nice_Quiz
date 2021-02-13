@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Difficulty, fetchQuizQuestions } from './API';
+import { fetchQuizQuestions } from './API';
 import './App.css';
 import QuestionCard from './components/QuestionCard/QuestionCard';
+import { Difficulty } from './types';
 
 const TOTAL_QUESTIONS: number = 10;
 
