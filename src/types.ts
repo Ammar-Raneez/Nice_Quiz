@@ -8,6 +8,14 @@ export declare type Question = {
     type: string;
 }
 
+//user answer type
+export declare type UserAnswer = {
+    question: string;
+    answer: string;
+    correct: boolean;
+    correctAnswer: string;
+}
+
 //creates another type w all properties of Question
 //but also an additional answers property (this will be used to hold all answers)
 //so that it can be displayed on the UI

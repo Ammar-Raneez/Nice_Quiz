@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
 import './App.css';
 import QuestionCard from './components/QuestionCard/QuestionCard';
-import { Difficulty } from './types';
+import { Difficulty, QuestionState } from './types';
 
 const TOTAL_QUESTIONS: number = 10;
 
 function App() {
 	const [loading, setLoading] = useState(false);
-	const [questions, setQuestions] = useState([]);
+	const [questions, setQuestions] = useState<QuestionState[]>([]);
 	const [number, setNumber] = useState(0);
 	const [userAnswers, setUserAnswers] = useState([]);
 	const [score, setScore] = useState(0);
@@ -36,7 +36,7 @@ function App() {
 			</button>
 			<p className="score">Score:</p>
 			<p>Loading Questions...</p>
-			{/* <QuestionCard 
+			<QuestionCard 
 				//array indexing starts from 0, but q num must be 1 
 				questionNo={number + 1}
 				totalQuestions={TOTAL_QUESTIONS}
@@ -44,7 +44,7 @@ function App() {
 				answers={questions[number].answers}
 				userAnswer={userAnswers ? userAnswers[number] : undefined}
 				callback={checkAnswer}
-			/> */}
+			/>
 			<button className="next" onClick={nextQuestion}>
 				Next Question
 			</button>
