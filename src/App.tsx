@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
+import { GlobalStyles } from './App.style';
 import QuestionCard from './components/QuestionCard/QuestionCard';
 import { Difficulty, QuestionState, UserAnswer } from './types';
 
@@ -67,42 +68,45 @@ function App() {
     }
 
 	return (
-		<div className="app">
-			<h1>Nice Quiz</h1>
+		<>
+			<GlobalStyles />
+			<div className="app">
+				<h1>Nice Quiz</h1>
 
-			{/* show start only at beginning */}
-			{(gameOver || userAnswers.length === TOTAL_QUESTIONS) && (
-				<button className="start" onClick={startTrivia}>
-					Start
-				</button>
-			)}
+				{/* show start only at beginning */}
+				{(gameOver || userAnswers.length === TOTAL_QUESTIONS) && (
+					<button className="start" onClick={startTrivia}>
+						Start
+					</button>
+				)}
 
-			{/* show score only during game */}
-			{!gameOver && <p className="score">Score:</p>}
+				{/* show score only during game */}
+				{!gameOver && <p className="score">Score:</p>}
 
-			{/* show loading only when questions are loading */}
-			{loading && <p>Loading Questions...</p>}
+				{/* show loading only when questions are loading */}
+				{loading && <p>Loading Questions...</p>}
 
-			{/* show question card only during game */}
-			{(!loading && !gameOver) && (
-				<QuestionCard 
-					//array indexing starts from 0, but q num must be 1 
-					questionNo={number + 1}
-					totalQuestions={TOTAL_QUESTIONS}
-					question={questions[number].question}
-					answers={questions[number].answers}
-					userAnswer={userAnswers ? userAnswers[number] : undefined}
-					callback={checkAnswer}
-				/>
-			)}
+				{/* show question card only during game */}
+				{(!loading && !gameOver) && (
+					<QuestionCard 
+						//array indexing starts from 0, but q num must be 1 
+						questionNo={number + 1}
+						totalQuestions={TOTAL_QUESTIONS}
+						question={questions[number].question}
+						answers={questions[number].answers}
+						userAnswer={userAnswers ? userAnswers[number] : undefined}
+						callback={checkAnswer}
+					/>
+				)}
 
-			{/* show next q button, if current q is answered and q is not final */}
-			{(!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 && (
-				<button className="next" onClick={nextQuestion}>
-					Next Question
-				</button>
-			))}
-		</div>
+				{/* show next q button, if current q is answered and q is not final */}
+				{(!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 && (
+					<button className="next" onClick={nextQuestion}>
+						Next Question
+					</button>
+				))}
+			</div>
+		</>
 	);
 }
 

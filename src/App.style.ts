@@ -1,4 +1,4 @@
-import BGImage from 'bgimage.jpg'
+import BGImage from './images/bgimage.jpg'
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Catamaran', sans-serif;
-    }
+    } 
 
     html {
         height: 100%;
